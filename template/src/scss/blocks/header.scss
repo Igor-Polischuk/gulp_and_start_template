@@ -1,0 +1,141 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    padding: rem(30px) 0;
+    z-index: 10000;
+    border-bottom: 1px solid rgba(#000, 0.1);
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    &__nav-items{
+        display: flex;
+    }
+
+    &__nav-link{
+        color: $secondary-text-color;
+        transition: 0.3s;
+        &:hover{
+            color: $accent-color;
+        }
+    }
+
+    &__nav-item:not(:last-child){
+        margin-right: rem(40px);
+    }
+}
+
+.header__sing-in{
+    font-weight: 500;
+    color: $black;
+    margin-right: rem(30px);
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 1140px){
+    .header{
+        padding: rem(20px) 0;
+
+        &__nav-item:not(:last-child){
+            margin-right: rem(30px);
+        }
+    }
+
+    .header__sing-in{
+        font-weight: 500;
+        color: $black;
+        margin-right: rem(20px);
+    }
+}
+
+.burger{
+    height: rem(30px);
+    width: rem(50px);
+    display: none;
+    position: relative;
+    cursor: pointer;
+
+    & span{
+        display: block;
+        width: 100%;
+        height: rem(2px);
+        background-color: $accent-color;
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        &:nth-child(1){
+            top: 0;
+        }
+        &:nth-child(2){
+            top: 50%; 
+        }
+        &:nth-child(3){
+            top: 100%; 
+        }
+    }
+}
+
+.burger__menu   {
+    position: absolute;
+    top: 0;
+
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    transform: translateY(-10000px);
+    transition: 0.5s;
+
+    &.active{
+
+        transform: translateY(79px);
+    }
+
+    &-list{
+        margin-bottom: rem(40px);
+    }
+
+    &-item{
+        margin-bottom: rem(50px);
+        font-size: rem(24px);
+        text-align: center;
+
+        & a{
+            color: $secondary-text-color;
+        }
+    }
+
+    &-btns a{
+        font-size: rem(24px);
+    }
+}
+
+@media (max-width: 1000px){
+    .header__menu{
+        display: none;
+    }
+
+    .header__sign-btn{
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    }
+}

@@ -1,0 +1,36 @@
+@import 'nullstyle.scss';
+@import 'vars';
+@import 'function';
+@import 'font';
+
+@import './blocks/header';
+
+@import './blocks/footer';
+
+html{
+    font-size: $html-font-size;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.wraper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1 1 100%;
+}
+
+.container{
+    max-width: rem(1180px);
+    padding: 0 rem(20px);
+    margin: 0 auto;
+}
+
+body.no-scroll{
+    overflow: hidden;
+}
